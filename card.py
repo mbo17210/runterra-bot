@@ -1,3 +1,5 @@
+from enum import Enum
+
 class Card:
     def __init__(self, cost, region):
         self.cost = cost
@@ -5,12 +7,18 @@ class Card:
 
 class Minion(Card):
     #Effect is from class effect.
-    def __init__(self, cost, attack, defense, effect, tag),:
+    def __init__(self, cost, attack, defense, effect, tag, keywords=[]):
         super().__init__(cost)
         self.attack = attack
         self.defense = defense
         self.effect = effect
         self.tag = tag
+        self.keywords = keywords
+
+class Keyword(Enum):
+    FEARSOME: 0
+    NOBLOCK: 1
+    ETHEREAL: 2
 
 class Spell(Card):
     #Speed is from SpellSpeed Enum. Effect is of class effect.
