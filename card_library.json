@@ -13,7 +13,8 @@
                         "trigger": "Attack",
                         "summon_atk": 1,
                         "summon_def": 1,
-                        "summon_tag": "Spider"
+                        "summon_tag": "Spider",
+                        "summon_name": "Spiderling"
                     }
                 ]
             },
@@ -102,7 +103,8 @@
                     "trigger": "Summon",
                     "summon_atk": 1,
                     "summon_def": 1,
-                    "summon_tag": "Spider"
+                    "summon_tag": "Spider",
+                    "summon_name": "Spiderling"
                 }
             ]
         },
