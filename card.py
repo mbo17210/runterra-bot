@@ -4,11 +4,12 @@ class Card:
 
 class Minion(Card):
     #Effect is from class effect.
-    def __init__(self, cost, attack, defense, effect):
+    def __init__(self, cost, attack, defense, effect, tag):
         super().__init__(cost)
         self.attack = attack
         self.defense = defense
         self.effect = effect
+        self.tag = tag
 
 class Spell(Card):
     #Speed is from SpellSpeed Enum. Effect is of class effect.
