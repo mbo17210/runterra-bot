@@ -25,7 +25,8 @@ class SpellSpeed(Enum):
 
 
 class Effect:
-    #If num_targets = 0, that implies the card doesn't specifically target something
+    #If num_targets = 0, that implies the card doesn't specifically target something (random target). 
+    #num_targets = 7 => targets all things possible
     #Hit nexus: 0 = no, 1 = possible, 2 = must (eg decimate)
     def __init__(self, targets, num_targets, damage, atk_buff, def_buff, hit_nexus)
 
