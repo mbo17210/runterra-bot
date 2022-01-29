@@ -1,10 +1,11 @@
 class Card:
-    def __init__(self, cost):
+    def __init__(self, cost, region):
         self.cost = cost
+        self.region = region
 
 class Minion(Card):
     #Effect is from class effect.
-    def __init__(self, cost, attack, defense, effect, tag):
+    def __init__(self, cost, attack, defense, effect, tag),:
         super().__init__(cost)
         self.attack = attack
         self.defense = defense
