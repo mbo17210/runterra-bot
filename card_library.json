@@ -1,0 +1,225 @@
+{
+    "Champions":[
+        {
+            "name": "Elise",
+            "unleveled":{
+                "cost": 2,
+                "attack": 2,
+                "health": 3,
+                "tag": "Spider",
+                "keywords": ["Fearsome"],
+                "effects":[
+                    {
+                        "trigger": "Attack",
+                        "summon_atk": 1,
+                        "summon_def": 1,
+                        "summon_tag": "Spider"
+                    }
+                ]
+            },
+            "levelup":{
+                
+            },
+            "leveled":{
+                "cost": 2,
+                "attack": 4,
+                "health": 3,
+                "tag": "Spider",
+                "keywords": ["Fearsome", "Challenger"],
+                "effect":[
+                    {
+                        "trigger": "Passive",
+                        "targets": "ALLIES",
+                        "num_targets": 7,
+                        "keyword_buff": ["Fearsome", "Challenger"],
+                        "buff_duration": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "Minions":[
+        {
+            "name": "Legion Rearguard",
+            "cost": 1,
+            "attack": 3,
+            "health": 2,
+            "keyword": ["NoBlock"]
+        },
+        {
+            "name": "Legion Saboteur",
+            "cost": 1,
+            "attack": 2,
+            "health": 1,
+            "effect":[
+                {
+                    "trigger": "Attack",
+                    "targets": "ENEMIES",
+                    "num_targets": 0,
+                    "damage": 1,
+                    "hit_nexus": 2
+                }
+            ]
+        },
+        {
+            "name": "Precious Pet",
+            "cost": 1,
+            "attack": 2,
+            "health": 1,
+            "tag": "Spider",
+            "keywords": ["Fearsome"]
+        },
+        {
+            "name": "Stygian Onlooker",
+            "cost": 1,
+            "attack": 2,
+            "health": 1,
+            "effect":[
+                {
+                    "targets": 4,
+                    "atk_buff": 2,
+                    "keyword_buff": ["Fearsome"],
+                    "buff_duration": 1
+                }
+            ]
+        },
+        {
+            "name": "Arachnoid Horror",
+            "cost": 2,
+            "attack": 3,
+            "health": 2,
+            "tag": "Spider",
+            "keywords": ["Fearsome"]
+        },
+        {
+            "name": "House Spider",
+            "cost": 2,
+            "attack": 2,
+            "defense": 2,
+            "tag": "Spider",
+            "effect":[
+                {
+                    "trigger": "Summon",
+                    "summon_atk": 1,
+                    "summon_def": 1,
+                    "summon_tag": "Spider"
+                }
+            ]
+        },
+        {
+            "name": "Imperial Demolitionist",
+            "cost": 2,
+            "attack": 2,
+            "defense": 3,
+            "effect":[
+                {
+                    "trigger": "Play",
+                    "targets": "ALLIES",
+                    "num_targets": 1, 
+                    "damage": 1,
+                    "hit_nexus": 0
+                },
+                {
+                    "trigger": "PrevEffect",
+                    "targets": "ENEMIES",
+                    "num_targets": 0,
+                    "damage": 2,
+                    "hit_nexus": 2
+                }
+            ]
+        },
+        {
+            "name": "Legion Grenadier",
+            "cost": 2,
+            "attack": 3,
+            "defense": 2,
+            "effect":[
+                {
+                    "trigger": "LastBreath",
+                    "targets": "ENEMIES",
+                    "num_targets": 0,
+                    "damage": 1,
+                    "hit_nexus": 2
+                }
+            ]
+        },
+        {
+            "name": "Doombeast",
+            "cost": 3,
+            "attack": 3,
+            "defense": 2, 
+            "effect":[
+                {
+                    "trigger": "Nightfall",
+                    "targets": "ENEMIES",
+                    "num_targets": 0,
+                    "damage": 2,
+                    "hit_nexus": 2
+                },
+                {
+                    "trigger": "PrevEffect",
+                    "targets": "ALLIES",
+                    "num_targets": 0,
+                    "heal": 2,
+                    "hit_nexus": 2
+                }
+            ]
+        },
+        {
+            "name": "Frenzied Skitterer",
+            "cost": 3,
+            "attack": 3,
+            "defense": 2,
+            "effect":[
+                {
+                    "trigger": "Summon",
+                    "targets": "ALLIES",
+                    "num_targets": 7,
+                    "atk_buff": 1,
+                    "buff_duration": 1
+                },
+                {
+                    "trigger": "PrevEffect",
+                    "targets": "ENEMIES",
+                    "num_targets": 7,
+                    "atk_buff": -1,
+                    "buff_duration": 1
+                }
+            ]
+        }
+    ],
+    "Spells":[
+        {
+            "name": "Noxian Fervor",
+            "cost": 3,
+            "effect":[
+                {
+                    "trigger": "Play",
+                    "targets": "ALLIES",
+                    "num_targets": 1, 
+                    "damage": 3,
+                    "hit_nexus": 0
+                },
+                {
+                    "trigger": "PrevEffect",
+                    "targets": "ANY",
+                    "num_targets": 1,
+                    "damage": 3,
+                    "hit_nexus": 1
+                }
+            ]
+        },
+        {
+            "name": "Decimate",
+            "effect":[
+                {
+                    "trigger": "Play",
+                    "targets": "ENEMIES",
+                    "num_targets": 0, 
+                    "damage": 4,
+                    "hit_nexus": 2
+                }
+            ]
+        }
+    ]
+}
