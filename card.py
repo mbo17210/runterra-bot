@@ -1,9 +1,21 @@
 from enum import Enum
+import itertools
 
 class Card:
-    def __init__(self, cost, region):
-        self.cost = cost
+    newid = itertools.count().next
+    def __init__(self, name, cost, region):
+        self.name = name
         self.region = region
+        self.cost = cost
+        self.id = Card.newid()
+        
+
+    def __eq__(self, other):
+        if not isinstance(other, str):
+            return NotImplemented
+        
+        return self.name == other.name
+        
 
 class Minion(Card):
     #Effect is from class effect.
@@ -18,7 +30,8 @@ class Minion(Card):
 class Keyword(Enum):
     FEARSOME: 0
     NOBLOCK: 1
-    ETHEREAL: 2
+    EPHEMERAL: 2
+    CHALLENGER: 3
 
 class Spell(Card):
     #Speed is from SpellSpeed Enum. Effect is of class effect.
