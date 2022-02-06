@@ -3,13 +3,14 @@ class Game:
     def __init__(self, players, turn):
         self.players = players
         self.turn = turn
+        
     def gameStart(self):
-        mulligan(self)
+        self.mulligan()
 
     def gameLoop(self):
-        roundStart(self)
+        self.roundStart()
         #roundAction()
-        roundEnd(self)
+        self.roundEnd()
     def roundStart(self):
         self.turn = self.turn + 1
         #updateMana
@@ -19,42 +20,65 @@ class Game:
         #check for game end
 
     def roundAction():
+        return "hi"
         
     def roundEnd(self):
         for p in self.players:
             p.endRound()
 
     def mulligan(self):
-        #unfinished
         for p in self.players:
-            p.deck.drawNum(self, 4)
+            drawn_cards = p.deck.drawNum(4)
+            discard = []
+            for pos in discard:
+                p.deck.bottomDeck(drawn_cards[pos])
+                drawn_cards.pop(pos)
+            
+            drawn_cards.extend(p.deck.drawNum(len(discard)))
+            
+            p.hand.extend(drawn_cards)
+
 
 class Player:
-    def __init__(self, regions, action, passed, health, mana, spellMana, hand, deck):
-        self.region = regions
+    MAX_HAND = 10
+    STARTING_HEALTH = 20
+    MAXIMUM_MANA = 10
+
+    def __init__(self, action, passed, mana, spellMana, hand, deck):
+        #not implemented 
+        #self.region = regions  
         self.action = action
         self.passed = passed
-        self.health = health
+        self.health = self.STARTING_HEALTH
         self.mana = mana
-        self.spellMana = spellMana
+        self.spell_mana = spellMana
+        self.max_mana = 0
         self.hand = hand
         self.deck = deck
-    def updateMana(self, maxMana):
-        self.spellMana = min(3, self.mana + self.spellMana)
-        self.mana = maxMana
-    def draw(self, numCards):
-        #should be redone to use the deck class
-        for card in range(0,numCards):
-            self.deck.size -= 1
-            self.deck.remove 
-            self.deck - numCards
-        if self.deck < 0:
+
+    def takeDamage(self, incoming_damage):
+        self.health -= incoming_damage
+
+    def incrementMaxMana(self):
+        if self.max_mana < self.MAXIMUM_MANA:
+            self.max_mana += 1
+
+    def updateMana(self):
+        self.incrementMaxMana()
+        self.spell_mana = min(3, self.mana + self.spell_mana)
+        self.mana = self.max_mana
+    
+    def draw(self, num_cards):
+        if self.deck == 0:
             self.health = 0
         
-            if self.hand.size < MAX_HAND:
-                self.hand.size += 1
-                self.hand.cards += card
-            else:
-                burn(card)
+        drawn_cards = self.deck.drawNum(num_cards)
+
+        for card in drawn_cards:
+            if len(self.hand) < self.MAX_HAND:
+                self.hand.append(card)
+
+    
+
 
     

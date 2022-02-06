@@ -1,10 +1,8 @@
 import random
 
-
-
 class Deck:
     STARTING_SIZE: 40
-    def __init__(self, json.cards):
+    def __init__(self, cards):
         self.cards = cards
         self.size = Deck.STARTING_SIZE
 
@@ -43,5 +41,8 @@ class Deck:
                 shown_cards.append(card)
 
         return shown_cards
+
+    def bottomDeck(self, card):
+        self.cards.append(card)
             
 
