@@ -1,18 +1,35 @@
 from enum import Enum
+import uuid
 
 class Card:
+    #Add region later
     def __init__(self, cost, name):
-        self.cost = cost
         self.name = name
+        self.cost = cost
+        self.id = uuid.uuid1()
+        
+
+    def __eq__(self, other):
+        if not isinstance(other, str):
+            return NotImplemented
+        
+        return self.name == other.name
+        
 
 class Minion(Card):
     #Effect is from class effect.
-    def __init__(self, cost, name, attack, health, tag = None, effects = None):
+    def __init__(self, cost, name, attack, health, tag = None, keywords=[], effects = []):
         super().__init__(cost, name)
         self.attack = attack
         self.health = health
         self.tag = tag
-        self.effects = effects
+        self.keywords = keywords
+
+class Keyword(Enum):
+    FEARSOME: 0
+    NOBLOCK: 1
+    EPHEMERAL: 2
+    CHALLENGER: 3
 
 class Spell(Card):
     #Speed is from SpellSpeed Enum. Effect is of class effect.

@@ -28,7 +28,8 @@ def minionLoader(minion, effects, name = None):
     attack = minion["attack"]
     health = minion["health"]
     tag = None if "tag" not in minion else minion["tag"]
-    return Minion(cost, name, attack, health, tag, effects)
+    keywords = [] if "keywords" not in minion else minion["keywords"]
+    return Minion(cost, name, attack, health, tag, keywords, effects)
 
 #Loads spell w/ info from library
 def spellLoader(spell, effects):
@@ -70,3 +71,4 @@ for item in card_data["Spells"]:
 
 for key in card_library:
     print(key)
+print(card_library["Doombeast"].id)
