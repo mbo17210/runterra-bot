@@ -7,7 +7,7 @@
                 "attack": 2,
                 "health": 3,
                 "tag": "Spider",
-                "keywords": ["Fearsome"],
+                "keywords": ["FEARSOME"],
                 "effects":[
                     {
                         "trigger": "Attack",
@@ -26,13 +26,14 @@
                 "attack": 4,
                 "health": 3,
                 "tag": "Spider",
-                "keywords": ["Fearsome", "Challenger"],
-                "effect":[
+                "keywords": ["FEARSOME", "CHALLENGER"],
+                "effects":[
                     {
                         "trigger": "Passive",
                         "targets": "ALLIES",
                         "num_targets": 7,
-                        "keyword_buff": ["Fearsome", "Challenger"],
+                        "keyword_buff": ["FEARSOME", "CHALLENGER"],
+                        "buff_target": "Spider",
                         "buff_duration": 0
                     }
                 ]
@@ -45,14 +46,14 @@
             "cost": 1,
             "attack": 3,
             "health": 2,
-            "keyword": ["NoBlock"]
+            "keyword": ["NOBLOCK"]
         },
         {
             "name": "Legion Saboteur",
             "cost": 1,
             "attack": 2,
             "health": 1,
-            "effect":[
+            "effects":[
                 {
                     "trigger": "Attack",
                     "targets": "ENEMIES",
@@ -68,18 +69,18 @@
             "attack": 2,
             "health": 1,
             "tag": "Spider",
-            "keywords": ["Fearsome"]
+            "keywords": ["FEARSOME"]
         },
         {
             "name": "Stygian Onlooker",
             "cost": 1,
             "attack": 2,
             "health": 1,
-            "effect":[
+            "effects":[
                 {
                     "targets": 4,
                     "atk_buff": 2,
-                    "keyword_buff": ["Fearsome"],
+                    "keyword_buff": ["FEARSOME"],
                     "buff_duration": 1
                 }
             ]
@@ -90,15 +91,15 @@
             "attack": 3,
             "health": 2,
             "tag": "Spider",
-            "keywords": ["Fearsome"]
+            "keywords": ["FEARSOME"]
         },
         {
             "name": "House Spider",
             "cost": 2,
             "attack": 2,
-            "defense": 2,
+            "health": 2,
             "tag": "Spider",
-            "effect":[
+            "effects":[
                 {
                     "trigger": "Summon",
                     "summon_atk": 1,
@@ -112,8 +113,8 @@
             "name": "Imperial Demolitionist",
             "cost": 2,
             "attack": 2,
-            "defense": 3,
-            "effect":[
+            "health": 3,
+            "effects":[
                 {
                     "trigger": "Play",
                     "targets": "ALLIES",
@@ -134,8 +135,8 @@
             "name": "Legion Grenadier",
             "cost": 2,
             "attack": 3,
-            "defense": 2,
-            "effect":[
+            "health": 2,
+            "effects":[
                 {
                     "trigger": "LastBreath",
                     "targets": "ENEMIES",
@@ -149,8 +150,8 @@
             "name": "Doombeast",
             "cost": 3,
             "attack": 3,
-            "defense": 2, 
-            "effect":[
+            "health": 2, 
+            "effects":[
                 {
                     "trigger": "Nightfall",
                     "targets": "ENEMIES",
@@ -171,14 +172,15 @@
             "name": "Frenzied Skitterer",
             "cost": 3,
             "attack": 3,
-            "defense": 2,
+            "health": 2,
             "tag": "Spider",
-            "effect":[
+            "effects":[
                 {
                     "trigger": "Summon",
                     "targets": "ALLIES",
                     "num_targets": 7,
                     "atk_buff": 1,
+                    "buff_target": "Spider",
                     "buff_duration": 1
                 },
                 {
@@ -195,7 +197,8 @@
         {
             "name": "Noxian Fervor",
             "cost": 3,
-            "effect":[
+            "speed": 2,
+            "effects":[
                 {
                     "trigger": "Play",
                     "targets": "ALLIES",
@@ -215,7 +218,8 @@
         {
             "name": "Decimate",
             "cost": 5,
-            "effect":[
+            "speed": 1,
+            "effects":[
                 {
                     "trigger": "Play",
                     "targets": "ENEMIES",
