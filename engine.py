@@ -3,6 +3,9 @@ class Game:
     def __init__(self, players, turn):
         self.players = players
         self.turn = turn
+    def gameStart(self):
+        mulligan(self)
+
     def gameLoop(self):
         roundStart(self)
         #roundAction()
@@ -14,9 +17,17 @@ class Game:
             p.updateMana(p, self.turn)
             p.draw(1)
         #check for game end
+
+    def roundAction():
+        
     def roundEnd(self):
         for p in self.players:
             p.endRound()
+
+    def mulligan(self):
+        #unfinished
+        for p in self.players:
+            p.deck.drawNum(self, 4)
 
 class Player:
     def __init__(self, regions, action, passed, health, mana, spellMana, hand, deck):
@@ -32,7 +43,18 @@ class Player:
         self.spellMana = min(3, self.mana + self.spellMana)
         self.mana = maxMana
     def draw(self, numCards):
-        self.deck = self.deck - numCards
+        #should be redone to use the deck class
+        for card in range(0,numCards):
+            self.deck.size -= 1
+            self.deck.remove 
+            self.deck - numCards
         if self.deck < 0:
             self.health = 0
-        self.hand = self.hand + numCards
+        
+            if self.hand.size < MAX_HAND:
+                self.hand.size += 1
+                self.hand.cards += card
+            else:
+                burn(card)
+
+    
