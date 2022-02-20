@@ -40,7 +40,6 @@ class Game:
 
 
 class Player:
-    MAX_HAND = 10
     STARTING_HEALTH = 20
     MAXIMUM_MANA = 10
 
@@ -59,6 +58,7 @@ class Player:
     def takeDamage(self, incoming_damage):
         self.health -= incoming_damage
 
+
     def incrementMaxMana(self):
         if self.max_mana < self.MAXIMUM_MANA:
             self.max_mana += 1
@@ -69,16 +69,8 @@ class Player:
         self.mana = self.max_mana
     
     def draw(self, num_cards):
-        if self.deck == 0:
+        if self.deck.size == 0:
             self.health = 0
-        
-        drawn_cards = self.deck.drawNum(num_cards)
 
-        for card in drawn_cards:
-            if len(self.hand) < self.MAX_HAND:
-                self.hand.append(card)
-
-    
-
-
-    
+        for card in self.deck.drawNum(num_cards):
+            self.hand.insert(card)

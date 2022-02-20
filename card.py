@@ -13,8 +13,13 @@ class Card:
         if not isinstance(other, str):
             return NotImplemented
         
-        return self.name == other.name
+        return self.name == other
+
+    def compareId(self, other):
+        if not isinstance(other, int):
+            return NotImplemented
         
+        return self.id == other
 
 class Minion(Card):
     #Effect is from class effect.
